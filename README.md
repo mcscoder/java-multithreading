@@ -1,18 +1,18 @@
-## Getting Started
+https://www.interviewbit.com/multithreading-interview-questions/
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+16-03-2023:
+1. What are two ways to implementing  thread in Java ?
+    - Extending the thread class. Ex:
+        ```java
+        class MultithreadingDemo extends Thread {
+            public void run() {
+                System.out.println("My thread is in running state.");
+            }
 
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+            public static void main(String args[]) {
+                MultithreadingDemo obj = new MultithreadingDemo();
+                obj.start();
+            }
+        }
+        ```
+    - Implementing Runnable interface in Java
