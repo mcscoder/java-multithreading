@@ -6,12 +6,14 @@ https://www.interviewbit.com/multithreading-interview-questions/
         ```java
         class MultithreadingDemo extends Thread {
             public void run() {
+                // Do something here
                 System.out.println("My thread is in running state.");
             }
 
             public static void main(String args[]) {
-                MultithreadingDemo obj = new MultithreadingDemo();
-                obj.start();
+                MultithreadingDemo myThread = new MultithreadingDemo();
+
+                myThread.start();
             }
         }
         ```
@@ -20,16 +22,50 @@ https://www.interviewbit.com/multithreading-interview-questions/
         ```java
         class MultithreadingDemo implements Runnable {
             public void run() {
+                // Do something here
                 System.out.println("My thread is in running state.");
             }
 
             public static void main(String args[]) {
-                MultithreadingDemo obj = new MultithreadingDemo();
-                Thread tobj = new Thread(obj);
-                tobj.start();
+                Thread myThread = new Thread(new MultithreadingDemo());
+
+                myThread.start();
             }
         }
         ```
+
+    - Some others way to implementing thread:
+        + Anonymous class:
+            ```java
+            class MultithreadingDemo {
+                public static void main(String args[]){
+                    Thread myThread = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Do something here
+                            System.out.println("My thread is in running state.");
+                        }            
+                    });
+
+                    myThread.start();
+                }
+            }
+            ```
+
+        + Lambda expression:
+            ```java
+            class MultithreadingDemo {
+                public static void main(String args[]){
+                    Runnable runnable = () -> {
+                        // Do something here
+                        System.out.println("My thread is in running state.");
+                    };
+
+                    Thread myThread = new Thread(runnable);
+                    myThread.start();
+                }
+            }
+            ```
 
 2. Life Cycle of a thread
     - 1. New
