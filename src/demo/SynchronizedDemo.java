@@ -1,5 +1,4 @@
-import javax.management.ValueExp;
-
+package demo;
 public class SynchronizedDemo extends Thread {
     private int value;
 

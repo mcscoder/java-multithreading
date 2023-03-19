@@ -1,81 +1,97 @@
 https://www.interviewbit.com/multithreading-interview-questions/
 
 # 16-03-2023:
-1. What are two ways to implementing thread in Java ?
-    - Extending the thread class.
-        ```java
-        class MultithreadingDemo extends Thread {
-            public void run() {
-                // Do something here
-                System.out.println("My thread is in running state.");
-            }
+<details>
 
-            public static void main(String args[]) {
-                MultithreadingDemo myThread = new MultithreadingDemo();
+<summary>1. What are two ways to implementing thread in Java ?<summary>
 
-                myThread.start();
-            }
+- Extending the thread class.
+    ```java
+    class MultithreadingDemo extends Thread {
+        public void run() {
+            // Do something here
+            System.out.println("My thread is in running state.");
         }
-        ```
-        
-    - Implementing Runnable interface in Java.
-        ```java
-        class MultithreadingDemo implements Runnable {
-            public void run() {
-                // Do something here
-                System.out.println("My thread is in running state.");
-            }
 
-            public static void main(String args[]) {
-                Thread myThread = new Thread(new MultithreadingDemo());
+        public static void main(String args[]) {
+            MultithreadingDemo myThread = new MultithreadingDemo();
 
-                myThread.start();
-            }
+            myThread.start();
         }
-        ```
+    }
+    ```
+    
+- Implementing Runnable interface in Java.
+    ```java
+    class MultithreadingDemo implements Runnable {
+        public void run() {
+            // Do something here
+            System.out.println("My thread is in running state.");
+        }
 
-    - Some others way to implementing thread:
-        + Anonymous class:
-            ```java
-            class MultithreadingDemo {
-                public static void main(String args[]){
-                    Thread myThread = new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            // Do something here
-                            System.out.println("My thread is in running state.");
-                        }            
-                    });
+        public static void main(String args[]) {
+            Thread myThread = new Thread(new MultithreadingDemo());
 
-                    myThread.start();
-                }
-            }
-            ```
+            myThread.start();
+        }
+    }
+    ```
 
-        + Lambda expression:
-            ```java
-            class MultithreadingDemo {
-                public static void main(String args[]){
-                    Runnable runnable = () -> {
+- Some others way to implementing thread:
+    + Anonymous class:
+        ```java
+        class MultithreadingDemo {
+            public static void main(String args[]){
+                Thread myThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
                         // Do something here
                         System.out.println("My thread is in running state.");
-                    };
+                    }            
+                });
 
-                    Thread myThread = new Thread(runnable);
-                    myThread.start();
-                }
+                myThread.start();
             }
-            ```
+        }
+        ```
+
+    + Lambda expression:
+        ```java
+        class MultithreadingDemo {
+            public static void main(String args[]){
+                Runnable runnable = () -> {
+                    // Do something here
+                    System.out.println("My thread is in running state.");
+                };
+
+                Thread myThread = new Thread(runnable);
+                myThread.start();
+            }
+        }
+        ```
+</details>
 
 2. Life Cycle of a thread
-    - 1. New
-    - 2. Active
-    - 3. Blocked / Waiting
-    - 4. Timed Waiting
-    - 5. Terminated
+    <details>
+    <summary>1. New</summary>
+    </details>
 
-    
-    + 1. New: Whenever a new thread is created, it is always in the new state.
+    <details>
+    <summary>2. Active</summary>
 
-    + 2. Active: When a thread invokes the start() method, it moves from the new state to the active state. The active state contains two states within it:
-        ++ Runnable: A thread 
+    </details>
+
+    <details>
+    <summary>3. Blocked / Waiting</summary>
+
+    </details>
+
+    <details>
+    <summary>4. Timed Waiting</summary>
+
+    </details>
+
+    <details>
+    <summary>5. Terminated</summary>
+
+    </details>

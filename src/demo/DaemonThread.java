@@ -1,3 +1,4 @@
+package demo;
 public class DaemonThread extends Thread {
     
     public static void main(String[] args) {
