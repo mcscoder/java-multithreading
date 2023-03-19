@@ -3,7 +3,7 @@ https://www.interviewbit.com/multithreading-interview-questions/
 # 16-03-2023:
 <details>
 
-<summary>1. What are two ways to implementing thread in Java ?<summary>
+<summary>1. Difference ways to implement thread<summary>
 
 - Extending the thread class.
     ```java
