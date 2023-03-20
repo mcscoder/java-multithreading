@@ -123,6 +123,25 @@ https://www.interviewbit.com/multithreading-interview-questions/
     <details>
     <summary>5. Terminated</summary>
 
-    - When a thread has completed it's execution
+    - When a thread has completed its execution
 
+    </details>
+
+3. Thread Synchronization:
+    <details>
+    <summary>What is thread synchronization</summary>
+
+    - Synchronization in Java is the capability to control the access of multiple threads to any shared resources
+
+    - A piece of logic marked with synchronized becomes a synchronized block, allowing one thread to execute at any given time
+    </details>
+
+    <details>
+    <summary>Why use Synchronization</summary>
+
+    - The synchronization is mainly used to avoid the <a href="https://www.baeldung.com/cs/race-conditions" target="_top">Race condition</a>
+    </details>
+
+    <details>
+    <summary>Types of </summary>
     </details>
