@@ -1,11 +1,11 @@
 https://www.interviewbit.com/multithreading-interview-questions/
 
 # 16-03-2023:
-<details>
+1. Difference ways to implement thread
 
-<summary>1. Difference ways to implement thread<summary>
+    <details>
+    <summary>Extending the thread class.</summary>
 
-- Extending the thread class.
     ```java
     class MultithreadingDemo extends Thread {
         public void run() {
@@ -20,8 +20,12 @@ https://www.interviewbit.com/multithreading-interview-questions/
         }
     }
     ```
-    
-- Implementing Runnable interface in Java.
+    </details>
+
+
+    <details>
+    <summary>Implementing Runnable interface in Java.</summary>
+
     ```java
     class MultithreadingDemo implements Runnable {
         public void run() {
@@ -36,62 +40,89 @@ https://www.interviewbit.com/multithreading-interview-questions/
         }
     }
     ```
+    </details>
 
-- Some others way to implementing thread:
-    + Anonymous class:
-        ```java
-        class MultithreadingDemo {
-            public static void main(String args[]){
-                Thread myThread = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        // Do something here
-                        System.out.println("My thread is in running state.");
-                    }            
-                });
 
-                myThread.start();
-            }
-        }
-        ```
+    <details>
+    <summary>Anonymous class.</summary>
 
-    + Lambda expression:
-        ```java
-        class MultithreadingDemo {
-            public static void main(String args[]){
-                Runnable runnable = () -> {
+    ```java
+    class MultithreadingDemo {
+        public static void main(String args[]){
+            Thread myThread = new Thread(new Runnable() {
+                @Override
+                public void run() {
                     // Do something here
                     System.out.println("My thread is in running state.");
-                };
+                }            
+            });
 
-                Thread myThread = new Thread(runnable);
-                myThread.start();
-            }
+            myThread.start();
         }
-        ```
-</details>
+    }
+    ```
+    </details>
+
+
+    <details>
+    <summary>Lambda expression</summary>
+
+    ```java
+    class MultithreadingDemo {
+        public static void main(String args[]){
+            Runnable runnable = () -> {
+                // Do something here
+                System.out.println("My thread is in running state.");
+            };
+
+            Thread myThread = new Thread(runnable);
+            myThread.start();
+        }
+    }
+    ```
+    </details>
 
 2. Life Cycle of a thread
     <details>
     <summary>1. New</summary>
+
+    - When a new thread is created, has not yet started
+    ```java
+    Thread myThread = new Thread(); // the thread is now in the New state
+    ``` 
     </details>
+
 
     <details>
-    <summary>2. Active</summary>
+    <summary>2. Runnable</summary>
 
+    - When a thread is executing or ready to execute
+    ```java
+        Thread myThread = new Thread();
+        myThread.start(); // the thread is now in the Runnable state
+    ```
     </details>
+
 
     <details>
     <summary>3. Blocked / Waiting</summary>
+
+    - Blocked: When a thread is waiting to acquire a monitor lock to enter or re-enter a synchronized
+
+    - Waiting: When a thread is waiting for some thread to perform a particular action without any time limit
 
     </details>
 
     <details>
     <summary>4. Timed Waiting</summary>
 
+    - When a thread is waiting for some thread to perform a specific action for a specified period
+
     </details>
 
     <details>
     <summary>5. Terminated</summary>
+
+    - When a thread has completed it's execution
 
     </details>
