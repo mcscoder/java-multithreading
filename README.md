@@ -143,5 +143,97 @@ https://www.interviewbit.com/multithreading-interview-questions/
     </details>
 
     <details>
-    <summary>Types of </summary>
+    <summary>Types of Synchronization</summary>
+
+    - There are two types of synchronization
+        1. Process Synchronization
+        2. Thread Synchronization
+    </details>
+
+    <details>
+    <summary>Thread Synchronization</summary>
+
+    - There are two types of thread synchronization mutual exclusive and inter-thread communication
+
+        1. Mutual Exclusive:
+            1. Synchronized method
+            2. Synchronized block
+            3. Static synchronization
+        2. Cooperation (Inter-thread communication in Java)
+    </details>
+
+    <details>
+    <summary>Mutual Exclusive</summary>
+
+    - Mutual Exclusive helps keep threads from interfering with one another while sharing data. 
+
+    - It can be achieved by using the following there ways:
+        1. By Using Synchronized Method
+        2. By Using Synchronized Block
+        3. By Using Static Synchronization
+    </details>
+
+    <details>
+    <summary>Understanding the problem without problem</summary>
+
+    - In this example, there is no synchronization, so the output is inconsistent
+
+    ```java
+    class Table {
+        void printTable(int n) { // method is not synchronized
+            for (int i = 1; i <= 5; i++) {
+                System.out.println(n * i);
+                try {
+                    Thread.sleep(400);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
+        }
+    }
+
+    class MyThread1 extends Thread {
+        Table t;
+
+        MyThread1(Table t) {
+            this.t = t;
+        }
+
+        public void run() {
+            t.printTable(5);
+        }
+    }
+
+    class MyThread2 extends Thread {
+        Table t;
+
+        MyThread2(Table t) {
+            this.t = t;
+        }
+
+        public void run() {
+            t.printTable(100);
+        }
+    }
+
+    public class TestSynchronization2 {
+        public static void main(String args[]) {
+            Table obj = new Table();// only one object
+            
+            // a resource is accessed by two threads
+            MyThread1 t1 = new MyThread1(obj);
+            MyThread2 t2 = new MyThread2(obj);
+            t1.start();
+            t2.start();
+        }
+    }
+    ```
+    </details>
+
+    <details>
+    <summary>Java Synchronized method</summary>
+
+    ```java
+    
+    ```
     </details>
