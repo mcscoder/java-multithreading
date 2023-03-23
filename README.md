@@ -81,6 +81,7 @@ https://www.interviewbit.com/multithreading-interview-questions/
     }
     ```
     </details>
+<br>
 
 2. Life Cycle of a thread
     <details>
@@ -109,6 +110,56 @@ https://www.interviewbit.com/multithreading-interview-questions/
 
     - Blocked: When a thread is waiting to acquire a monitor lock to enter or re-enter a synchronized
 
+    ```java
+    public class TestSynchronization {
+        public static void main(String[] args) {
+            Count c = new Count();
+            
+            // Both thread access to a resource in an object
+            Thread thread0 = new Thread() { // New state
+                @Override
+                public void run() {
+                    c.countToFive();
+                }
+            };
+            
+            Thread thread1 = new Thread() { // New state
+                @Override
+                public void run() {
+                    c.countToFive();
+                }
+            };
+
+            c.setThread(thread0, thread1);
+            System.out.println();
+
+            thread0.start(); // Runnable state
+            thread1.start(); // Blocked state (blocked by thread0)
+        }
+    }
+
+    class Count {
+        Thread[] _thread;
+        public void setThread(Thread... _thread) {
+            this._thread = _thread;
+        }
+        public synchronized void countToFive() {
+            for(int i = 0; i < 5; i++) {
+                for(Thread thread : _thread) {
+                    System.out.println(thread.getName() + " " + thread.getState());
+                }
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+            System.out.println();
+        }
+    }
+    ```
+
     - Waiting: When a thread is waiting for some thread to perform a particular action without any time limit
 
     </details>
@@ -117,6 +168,25 @@ https://www.interviewbit.com/multithreading-interview-questions/
     <summary>4. Timed Waiting</summary>
 
     - When a thread is waiting for some thread to perform a specific action for a specified period
+    ```java
+    public class TestSynchronization {
+        public static void main(String[] args) throws InterruptedException {
+            Thread t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            t.start();
+            Thread.sleep(10);
+            System.out.println(t.getState()); // Timed Waiting state
+        }
+    }
+    ```
 
     </details>
 
@@ -124,8 +194,14 @@ https://www.interviewbit.com/multithreading-interview-questions/
     <summary>5. Terminated</summary>
 
     - When a thread has completed its execution
-
+    ```java
+    Thread t = new Thread();
+    t.start();
+    t.join();
+    System.out.println(t.getState()); // Terminated state
+    ```
     </details>
+<br>
 
 3. Thread Synchronization:
     <details>
@@ -216,7 +292,7 @@ https://www.interviewbit.com/multithreading-interview-questions/
         }
     }
 
-    public class TestSynchronization2 {
+    public class TestSynchronization {
         public static void main(String args[]) {
             Table obj = new Table();// only one object
             
@@ -232,6 +308,9 @@ https://www.interviewbit.com/multithreading-interview-questions/
 
     <details>
     <summary>Java Synchronized method</summary>
+
+    - If you declare any method as synchronized, it is known as a synchronized method.
+    - The synchronized method is used to lock an object for any shared resource.
 
     ```java
     class Table {
@@ -271,7 +350,7 @@ https://www.interviewbit.com/multithreading-interview-questions/
         }
     }
 
-    public class TestSynchronization2 {
+    public class TestSynchronization {
         public static void main(String args[]) {
             Table obj = new Table();// only one object
             
@@ -284,3 +363,28 @@ https://www.interviewbit.com/multithreading-interview-questions/
     }
     ```
     </details>
+
+    <br>
+4. wait() and notify() method
+
+    <details>
+    <summary>wait() method</summary>
+
+    - The wait() method causes the current thread to release the lock and wait until either another thread invokes the notify() method or the notifyAll() method for this object, or a specified amount of time has elapsed
+
+    - The current thread must own this object's monitor, so it must be called from the synchronized method only otherwise it will throw an exception
+    <br>
+    
+    - Waits until the object is notified
+    ```java
+    public final void wait() throws java.lang.InterruptedException
+    ```
+    <br>
+
+    - Waits for the specified amount of time.
+    ```java
+    public final native void wait(long arg0) throws java.lang.InterruptedException
+    ```
+    </details>
+
+    
