@@ -161,6 +161,25 @@ https://www.interviewbit.com/multithreading-interview-questions/
     ```
 
     - Waiting: When a thread is waiting for some thread to perform a particular action without any time limit
+    ```java
+    public class ThreadState {
+        public static void main(String[] args) throws InterruptedException {
+            Thread thread1 = new Thread() {
+                @Override
+                public synchronized void run() {
+                    try {
+                        wait(); // Thread now is Waiting state
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+            };
+            thread1. start();
+            System.out.println(thread1.getState());
+        }
+    }
+    ```
 
     </details>
 
@@ -203,7 +222,7 @@ https://www.interviewbit.com/multithreading-interview-questions/
     </details>
 <br>
 
-3. Thread Synchronization:
+1. Thread Synchronization:
     <details>
     <summary>What is thread synchronization</summary>
 
@@ -231,11 +250,11 @@ https://www.interviewbit.com/multithreading-interview-questions/
 
     - There are two types of thread synchronization mutual exclusive and inter-thread communication
 
-        1. Mutual Exclusive:
+        3. Mutual Exclusive:
             1. Synchronized method
             2. Synchronized block
             3. Static synchronization
-        2. Cooperation (Inter-thread communication in Java)
+        4. Cooperation (Inter-thread communication in Java)
     </details>
 
     <details>
@@ -244,9 +263,9 @@ https://www.interviewbit.com/multithreading-interview-questions/
     - Mutual Exclusive helps keep threads from interfering with one another while sharing data. 
 
     - It can be achieved by using the following there ways:
-        1. By Using Synchronized Method
-        2. By Using Synchronized Block
-        3. By Using Static Synchronization
+        5. By Using Synchronized Method
+        6. By Using Synchronized Block
+        7. By Using Static Synchronization
     </details>
 
     <details>
@@ -363,23 +382,20 @@ https://www.interviewbit.com/multithreading-interview-questions/
     }
     ```
     </details>
-
     <br>
-4. wait() and notify() method
 
+2. wait() and notify() method
     <details>
     <summary>wait() method</summary>
 
     - The wait() method causes the current thread to release the lock and wait until either another thread invokes the notify() method or the notifyAll() method for this object, or a specified amount of time has elapsed
 
     - The current thread must own this object's monitor, so it must be called from the synchronized method only otherwise it will throw an exception
-    <br>
     
     - Waits until the object is notified
     ```java
     public final void wait() throws java.lang.InterruptedException
     ```
-    <br>
 
     - Waits for the specified amount of time.
     ```java
@@ -387,4 +403,24 @@ https://www.interviewbit.com/multithreading-interview-questions/
     ```
     </details>
 
+    <details>
+    <summary>notify() method</summary>
     
+    - The notify() method wakes up a single thread that is waiting on this object's monitor. If any threads are waiting on this object, one of them is chosen to be awakened.
+
+    - Syntax:
+    ```java
+    public final void notify()
+    ```
+    </details>
+
+    <details>
+    <summary>Difference between wait and sleep</summary>
+    </details>
+
+    | wait() | sleep() |
+    | --- | --- |
+    The wait() method release the lock | The sleep() method doesn't release the lock
+    It is a method of Object class | It is method of Thread class
+    It is the non-static method | It is the static method
+    It should be notified by notify() or notifyAll() methods | After the specified amount of time, sleep is completed
