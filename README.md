@@ -255,6 +255,7 @@ https://www.interviewbit.com/multithreading-interview-questions/
             1. Synchronized method
             2. Synchronized block
             3. Static synchronization
+            
         2. Cooperation (Inter-thread communication in Java)
     </details>
 
@@ -264,9 +265,9 @@ https://www.interviewbit.com/multithreading-interview-questions/
     - Mutual Exclusive helps keep threads from interfering with one another while sharing data. 
 
     - It can be achieved by using the following there ways:
-        5. By Using Synchronized Method
-        6. By Using Synchronized Block
-        7. By Using Static Synchronization
+        1. By Using Synchronized Method
+        2. By Using Synchronized Block
+        3. By Using Static Synchronization
     </details>
 
     <details>
