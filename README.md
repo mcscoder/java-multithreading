@@ -83,7 +83,6 @@ class MultithreadingDemo {
 ```
 </details>
 
----
 
 ## 2. Life Cycle of a thread
 <details>
@@ -224,8 +223,6 @@ System.out.println(t.getState()); // Terminated state
 ```
 </details>
 
----
-
 ## 3. Thread Synchronization:
 <details>
 <summary>What is thread synchronization</summary>
@@ -245,11 +242,10 @@ System.out.println(t.getState()); // Terminated state
 <summary>Types of Synchronization</summary>
 
 - There are two types of synchronization:
-<ol style="list-style-type: decimal">
-    <li>Process Synchronization</li>
-    <li>Thread Synchronization</li>
-</ol>
-
+    <ol style="list-style-type: decimal">
+        <li>Process Synchronization</li>
+        <li>Thread Synchronization</li>
+    </ol>
 
 </details>
 
@@ -392,8 +388,6 @@ public class TestSynchronization {
 ```
 </details>
 
----
-
 ## 4. wait() and notify() method
 <details>
 <summary>wait() method</summary>
@@ -500,8 +494,6 @@ public class WaitAndNotifyDemo {
 }
 ```
 </details>
-
----
 
 ## 5. Deadlock
 <details>
