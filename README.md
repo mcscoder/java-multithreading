@@ -241,11 +241,10 @@ System.out.println(t.getState()); // Terminated state
 <details>
 <summary>Types of Synchronization</summary>
 
-There are two types of synchronization:
-<ol style="list-style-type: decimal;">
-    <li>Process Synchronization</li>
-    <li>Thread Synchronization</li>
-</ol>
+### There are two types of synchronization:
+1. Process Synchronization
+1. Thread Synchronization
+
 
 </details>
 
