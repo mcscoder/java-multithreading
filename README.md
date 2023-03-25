@@ -245,8 +245,12 @@ System.out.println(t.getState()); // Terminated state
 <summary>Types of Synchronization</summary>
 
 - There are two types of synchronization:
-    - 1. Process Synchronization
-    - 2. Thread Synchronization
+<ol style="list-style-type: decimal">
+    <li>Process Synchronization</li>
+    <li>Thread Synchronization</li>
+</ol>
+
+
 </details>
 
 <details>
@@ -254,12 +258,12 @@ System.out.println(t.getState()); // Terminated state
 
 - There are two types of thread synchronization mutual exclusive and inter-thread communication
 
-    - 1. Mutual Exclusive:
-        1. Synchronized method
-        2. Synchronized block
-        3. Static synchronization
+1. Mutual Exclusive:
+    1. Synchronized method
+    1. Synchronized block
+    1. Static synchronization
 
-    2. Cooperation (Inter-thread communication in Java)
+1. Cooperation (Inter-thread communication in Java)
 </details>
 
 <details>
