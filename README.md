@@ -241,7 +241,7 @@ https://www.interviewbit.com/multithreading-interview-questions/
     <details>
     <summary>Types of Synchronization</summary>
 
-    - There are two types of synchronization
+    - There are two types of synchronization:
         1. Process Synchronization
         2. Thread Synchronization
     </details>
@@ -251,11 +251,11 @@ https://www.interviewbit.com/multithreading-interview-questions/
 
     - There are two types of thread synchronization mutual exclusive and inter-thread communication
 
-        3. Mutual Exclusive:
+        1. Mutual Exclusive:
             1. Synchronized method
             2. Synchronized block
             3. Static synchronization
-        4. Cooperation (Inter-thread communication in Java)
+        2. Cooperation (Inter-thread communication in Java)
     </details>
 
     <details>
