@@ -35,10 +35,12 @@ class Bank {
     }
 }
 
-public class WaitAndNotify {
+public class WaitAndNotifyDemo {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         Bank bank = new Bank(4000);
+
+        // create two threads access into a resource in an object
         Thread thread1 = new Thread() {
             @Override
             public void run() {
