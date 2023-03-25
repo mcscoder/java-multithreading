@@ -223,7 +223,7 @@ https://www.interviewbit.com/multithreading-interview-questions/
     </details>
 <br>
 
-1. Thread Synchronization:
+3. Thread Synchronization:
     <details>
     <summary>What is thread synchronization</summary>
 
@@ -385,7 +385,7 @@ https://www.interviewbit.com/multithreading-interview-questions/
     </details>
     <br>
 
-2. wait() and notify() method
+4. wait() and notify() method
     <details>
     <summary>wait() method</summary>
 
