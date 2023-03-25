@@ -162,7 +162,7 @@ https://www.interviewbit.com/multithreading-interview-questions/
 
     - Waiting: When a thread is waiting for some thread to perform a particular action without any time limit
     ```java
-    public class ThreadState {
+    public class WaitingState {
         public static void main(String[] args) throws InterruptedException {
             Thread thread1 = new Thread() {
                 @Override
@@ -175,8 +175,9 @@ https://www.interviewbit.com/multithreading-interview-questions/
                     }
                 }
             };
-            thread1. start();
-            System.out.println(thread1.getState());
+            thread1.start();
+            System.out.println();
+            System.out.println(thread1.getState()); // output: WAITING
         }
     }
     ```
@@ -416,11 +417,78 @@ https://www.interviewbit.com/multithreading-interview-questions/
 
     <details>
     <summary>Difference between wait and sleep</summary>
-    </details>
-
+    
     | wait() | sleep() |
     | --- | --- |
     The wait() method release the lock | The sleep() method doesn't release the lock
     It is a method of Object class | It is method of Thread class
     It is the non-static method | It is the static method
     It should be notified by notify() or notifyAll() methods | After the specified amount of time, sleep is completed
+    </details>
+
+    <details>
+    <summary>Code demo</summary>
+
+    ```java
+    import java.util.Scanner;
+
+    class Bank {
+        private int balance;
+        private int widthDrawAmount = -1;
+
+        public Bank(int balance) {
+            this.balance = balance;
+        }
+
+        public synchronized void widthDraw(int amount) {
+            widthDrawAmount = amount;
+            if (balance < amount) {
+                System.out.println("deo du tien ma doi rut, danh chetme may gio");
+                try {
+                    wait();
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+
+            balance -= amount;
+            System.out.println("rut tien thanh cong");
+        }
+
+        public synchronized void deposit(int amount) {
+            balance += amount;
+            System.out.println("nap tien thanh cong");
+            if (widthDrawAmount != -1 && balance > widthDrawAmount) {
+                notify();
+            }
+        }
+    }
+
+    public class WaitAndNotifyDemo {
+        public static void main(String[] args) {
+            Scanner in = new Scanner(System.in);
+            Bank bank = new Bank(4000);
+
+            // create two threads access into a resource in an object
+            Thread thread1 = new Thread() {
+                @Override
+                public void run() {
+                    bank.widthDraw(5000);
+                }
+            };
+
+            Thread thread2 = new Thread() {
+                @Override
+                public void run() {
+                    bank.deposit(in.nextInt());
+                }
+            };
+
+            thread1.start();
+            thread2.start();
+        }
+    }
+    ```
+    </details>
+    
