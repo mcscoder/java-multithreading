@@ -392,12 +392,12 @@ public class TestSynchronization {
 
 - The current thread must own this object's monitor, so it must be called from the synchronized method only otherwise it will throw an exception
 
-- Waits until the object is notified
+#### Waits until the object is notified
 ```java
 public final void wait() throws java.lang.InterruptedException
 ```
 
-- Waits for the specified amount of time.
+#### Waits for the specified amount of time.
 ```java
 public final native void wait(long arg0) throws java.lang.InterruptedException
 ```
@@ -408,7 +408,7 @@ public final native void wait(long arg0) throws java.lang.InterruptedException
 
 - The notify() method wakes up a single thread that is waiting on this object's monitor. If any threads are waiting on this object, one of them is chosen to be awakened.
 
-- Syntax:
+#### Syntax:
 ```java
 public final void notify()
 ```
