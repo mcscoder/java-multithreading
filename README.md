@@ -1,3 +1,23 @@
+<style> 
+    summary {
+        font-size: 20px;
+    }
+
+    summary:hover {
+        color: blue;
+        transition-duration: 300ms;
+    }
+
+details[open] summary ~ * {
+  animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+  0%    {opacity: 0; margin-left: -10px}
+  100%  {opacity: 1; margin-left: 0px}
+}
+</style>
+
 # Java MultiThreading
 
 ## 1. Difference ways to implement thread

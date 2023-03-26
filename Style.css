@@ -1,0 +1,7 @@
+summary {
+    font-size: 20;
+}
+
+summary:hover {
+    color: blue;
+}
