@@ -107,7 +107,7 @@ myThread.start(); // the thread is now in the Runnable state
 <details>
 <summary>3. Blocked / Waiting</summary>
 
-### Blocked: When a thread is waiting to acquire a monitor lock to enter or re-enter a synchronized
+#### Blocked: When a thread is waiting to acquire a monitor lock to enter or re-enter a synchronized
 
 ```java
 public class TestSynchronization {
@@ -186,7 +186,7 @@ public class WaitingState {
 <details>
 <summary>4. Timed Waiting</summary>
 
-- When a thread is waiting for some thread to perform a specific action for a specified period
+#### When a thread is waiting for some thread to perform a specific action for a specified period
 ```java
 public class TestSynchronization {
     public static void main(String[] args) throws InterruptedException {
@@ -212,7 +212,7 @@ public class TestSynchronization {
 <details>
 <summary>5. Terminated</summary>
 
-- When a thread has completed its execution
+#### When a thread has completed its execution
 ```java
 Thread t = new Thread();
 t.start();
@@ -225,9 +225,9 @@ System.out.println(t.getState()); // Terminated state
 <details>
 <summary>What is thread synchronization</summary>
 
-- Synchronization in Java is the capability to control the access of multiple threads to any shared resources
+#### Synchronization in Java is the capability to control the access of multiple threads to any shared resources
 
-- A piece of logic marked with synchronized becomes a synchronized block, allowing one thread to execute at any given time
+#### A piece of logic marked with synchronized becomes a synchronized block, allowing one thread to execute at any given time
 </details>
 
 <details>
