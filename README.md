@@ -495,9 +495,9 @@ public class WaitAndNotifyDemo {
 <details>
 <summary>Deadlock in Java</summary>
 
-Deadlock in Java occurs when two or more threads are blocked forever, waiting for each other to release the resources they need to continue execution.
+- Deadlock in Java occurs when two or more threads are blocked forever, waiting for each other to release the resources they need to continue execution.
 
-<img src="https://static.javatpoint.com/images/java-deadlock.png">
+<img src="src/assets/Deadlock2.svg">
 </details>
 
 <details>
@@ -546,5 +546,23 @@ public class DeadlockDemo {
     }
 }
 ```
-</deadlock>
+</details>
 
+<details>
+<summary>More Complicated Deadlocks</summary>
+
+- A Deadlock may also include more than two threads
+
+- The reason is that it can be difficult to detect a Deadlock
+
+#### Example:
+- Thread-0 locks A, waits for B
+
+- Thread-1 locks B, waits for C
+
+- Thread-2 locks C, waits for D
+
+- Thread-3 locks D, waits for A
+
+<img src="src/assets/Deadlock.svg">
+</details>
