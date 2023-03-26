@@ -225,9 +225,9 @@ System.out.println(t.getState()); // Terminated state
 <details>
 <summary>What is thread synchronization</summary>
 
-#### Synchronization in Java is the capability to control the access of multiple threads to any shared resources
+- Synchronization in Java is the capability to control the access of multiple threads to any shared resources
 
-#### A piece of logic marked with synchronized becomes a synchronized block, allowing one thread to execute at any given time
+- A piece of logic marked with synchronized becomes a synchronized block, allowing one thread to execute at any given time
 </details>
 
 <details>
@@ -239,7 +239,7 @@ System.out.println(t.getState()); // Terminated state
 <details>
 <summary>Types of Synchronization</summary>
 
-- There are two types of synchronization:
+#### There are two types of synchronization:
     1. Process Synchronization
     1. Thread Synchronization
 
