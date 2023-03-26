@@ -243,13 +243,12 @@ System.out.println(t.getState()); // Terminated state
 1. Process Synchronization
 1. Thread Synchronization
 
-
 </details>
 
 <details>
 <summary>Thread Synchronization</summary>
 
-- There are two types of thread synchronization mutual exclusive and inter-thread communication
+### There are two types of thread synchronization mutual exclusive and inter-thread communication
 
 1. Mutual Exclusive:
     1. Synchronized method
