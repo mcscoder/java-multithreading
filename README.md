@@ -586,7 +586,7 @@ public class DeadlockSolved {
         final String resource1 = "heeloo";
         final String resource2 = "py py";
 
-        // t1 tries to lock resource1 then resource2
+        // t1 tries to lock resource2 then resource1
         Thread t1 = new Thread() {
             public void run() {
                 synchronized (resource2) {
