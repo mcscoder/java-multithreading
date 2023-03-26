@@ -240,8 +240,8 @@ System.out.println(t.getState()); // Terminated state
 <summary>Types of Synchronization</summary>
 
 #### There are two types of synchronization:
-    1. Process Synchronization
-    1. Thread Synchronization
+1. Process Synchronization
+1. Thread Synchronization
 
 
 </details>
