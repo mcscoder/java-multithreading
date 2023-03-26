@@ -270,9 +270,9 @@ System.out.println(t.getState()); // Terminated state
 </details>
 
 <details>
-<summary>Understanding the problem without problem</summary>
+<summary>Understanding the problem without synchronization</summary>
 
-- In this example, there is no synchronization, so the output is inconsistent
+#### In this example, there is no synchronization, so the output is inconsistent
 
 ```java
 class Table {
