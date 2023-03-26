@@ -564,5 +564,7 @@ public class DeadlockDemo {
 
 - Thread-3 locks D, waits for A
 
+> Thread 1 waits for thread 2, thread 2 waits for thread 3, thread 3 waits for thread 4, and thread 4 waits for thread 1.
+
 <img src="src/assets/deadlock_4.svg">
 </details>
