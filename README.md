@@ -86,7 +86,7 @@ class MultithreadingDemo {
 <details>
 <summary>1. New</summary>
 
-### When a new thread is created, has not yet started
+#### When a new thread is created, has not yet started
 ```java
 Thread myThread = new Thread(); // the thread is now in the New state
 ``` 
@@ -96,7 +96,7 @@ Thread myThread = new Thread(); // the thread is now in the New state
 <details>
 <summary>2. Runnable</summary>
 
-### When a thread is executing or ready to execute
+#### When a thread is executing or ready to execute
 ```java
 Thread myThread = new Thread();
 myThread.start(); // the thread is now in the Runnable state
