@@ -497,7 +497,7 @@ public class WaitAndNotifyDemo {
 
 - Deadlock in Java occurs when two or more threads are blocked forever, waiting for each other to release the resources they need to continue execution.
 
-<img src="src/assets/Deadlock2.svg">
+<img src="src/assets/deadlock_2.svg">
 </details>
 
 <details>
@@ -564,5 +564,5 @@ public class DeadlockDemo {
 
 - Thread-3 locks D, waits for A
 
-<img src="src/assets/Deadlock.svg">
+<img src="src/assets/deadlock_4.svg">
 </details>
