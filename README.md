@@ -564,7 +564,35 @@ public class DeadlockDemo {
 
 - Thread-3 locks D, waits for A
 
-> Thread 1 waits for thread 2, thread 2 waits for thread 3, thread 3 waits for thread 4, and thread 4 waits for thread 1.
+> Thread-0 waits for thread-1, thread-1 waits for thread-2, thread-2 waits for thread-3, and thread-3 waits for thread-0.
 
 <img src="src/assets/deadlock_4.svg">
+</details>
+
+<details>
+<summary>How to Avoid Deadlock in Java</summary>
+
+1. Avoid Nested Locks: We must avoid giving locks to multiple threads, this is a main reason for Deadlock condition
+
+2. Avoid Unnecessary Locks: The locks should be given to the important threads
+
+3. Using Thread Join: A deadlock usually happens when one thread is waiting for the other to finish. In this case, we can use join with a maximum time that a thread will take
+</details>
+
+## 6. Garbage Collection
+
+<details>
+<summary>Java Garbage Collection</summary>
+
+- Garbage Collection is process of reclaiming the runtime unused memory automatically. In other words, it is a way to destroy the unused objects
+
+- To do so, we were using free() function in C programming language and delete() in C++. But, in Java it is performed automatically. In other words, it is automatic and does not require writing any specific block of code like free() or delete()
+</details>
+
+<details>
+<summary>Advantage of Garbage Collection</summary>
+
+- It makes Java memory efficient because garbage collector removes the unreferenced objects from heap memory
+
+- It is automatically done by the garbage collector (a part of JVM) so we don't need to make extra efforts
 </details>
