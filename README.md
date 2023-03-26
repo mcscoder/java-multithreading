@@ -1,6 +1,4 @@
-https://www.interviewbit.com/multithreading-interview-questions/
-
-# 16-03-2023:
+# Java MultiThreading
 
 ## 1. Difference ways to implement thread
 
@@ -88,7 +86,7 @@ class MultithreadingDemo {
 <details>
 <summary>1. New</summary>
 
-- When a new thread is created, has not yet started
+### When a new thread is created, has not yet started
 ```java
 Thread myThread = new Thread(); // the thread is now in the New state
 ``` 
@@ -98,10 +96,10 @@ Thread myThread = new Thread(); // the thread is now in the New state
 <details>
 <summary>2. Runnable</summary>
 
-- When a thread is executing or ready to execute
+### When a thread is executing or ready to execute
 ```java
-    Thread myThread = new Thread();
-    myThread.start(); // the thread is now in the Runnable state
+Thread myThread = new Thread();
+myThread.start(); // the thread is now in the Runnable state
 ```
 </details>
 
@@ -109,7 +107,7 @@ Thread myThread = new Thread(); // the thread is now in the New state
 <details>
 <summary>3. Blocked / Waiting</summary>
 
-- Blocked: When a thread is waiting to acquire a monitor lock to enter or re-enter a synchronized
+### Blocked: When a thread is waiting to acquire a monitor lock to enter or re-enter a synchronized
 
 ```java
 public class TestSynchronization {
@@ -161,7 +159,7 @@ class Count {
 }
 ```
 
-- Waiting: When a thread is waiting for some thread to perform a particular action without any time limit
+#### Waiting: When a thread is waiting for some thread to perform a particular action without any time limit
 ```java
 public class WaitingState {
     public static void main(String[] args) throws InterruptedException {
